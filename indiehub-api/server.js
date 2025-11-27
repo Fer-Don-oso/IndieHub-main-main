@@ -9,7 +9,9 @@ const gamesRoutes = require('./routes/games');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGODB_URI;
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb+srv://indiehub_user:DON.fer06052025@cluster0.pwy78kg.mongodb.net/indiehub?retryWrites=true&w=majority&appName=Cluster0';
+
+console.log('MONGO_URI:', MONGO_URI); // Para debug
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('Conectado a MongoDB'))
