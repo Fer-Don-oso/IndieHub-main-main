@@ -1,0 +1,31 @@
+/* Fondo desde /public (no incluyas 'public/' en la ruta con Vite) */
+body {
+  background-image: url('/static/img/fondo1.jpg');
+}
+
+/* Anula el body flex del template de Vite y evita overflow horizontal */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: block;           /* antes venía como flex en index.css */
+  place-items: normal;      /* anula el centrado de Vite */
+  padding-top: 64px;        /* separa contenido del navbar fixed-top */
+}
+
+.navbar{
+    background-color: #212529;
+}
+
+#carouselExampleIndicators {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-inner{
+    max-height: 500px;
+    object-fit: cover;
+}
