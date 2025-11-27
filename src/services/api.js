@@ -1,5 +1,5 @@
 // src/services/api.js
-const API_URL = 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://indiehub-main-main-production.up.railway.app/api';
 
 export const gameService = {
     // Obtener todos los juegos

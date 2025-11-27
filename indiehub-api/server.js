@@ -24,6 +24,8 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Rutas API
 app.use('/api/games', gamesRoutes);
 
+app.get('/', (req,res)=>res.json({status:'ok'}));
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
   console.log(`Swagger en http://localhost:${PORT}/api-docs`);
