@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -8,8 +9,9 @@ const gamesRoutes = require('./routes/games');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGODB_URI;
 
-mongoose.connect('mongodb://localhost:27017/indiehub')
+mongoose.connect(MONGO_URI)
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error de conexión:', err));
 
